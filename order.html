@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Online Boot Store Website Design Tutorial</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/order.css">
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <div class="header-1">
+
+            <a href="index.html" class="logo"> <i class="fas fa-book"></i> BOOKSHOP </a>
+        </div>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <div class="container row mx-auto pt-5 h-100 pb-3">
+        <div class="col-lg-7 bookContent rounded shadow-lg">
+            <div class="container py-3">
+                <h3 class="py-2">Create your Order!</h3>
+                <form class="mx-auto" id="orderForm"> 
+                    <!--Book TYPE dropdown label and select-->
+                    <div class="row g-3 align-items-center w-100 pt-2">
+                            <div class="col-lg-2">
+                            <label for="" class="col-form-label heavyFont">Type:</label>
+                            </div>
+                            <div class="col-lg-10">
+                                <select id="bookCatSelect" class="form-select" aria-label="Default select example">
+                                        <option value="Classics" selected>Classics</option>
+                                        <option value="Mystery">Mystery</option>
+                                        <option value="Kids">Kids</option>
+                                        <option value="Social">Social</option>
+                                </select>
+                            </div>
+                    </div><!--Book TYPE dropdown label and select END-->
+
+                    <!--Book Pages dropdown label and select-->
+                    <div class="row g-3 align-items-center w-100 pt-3">
+                            <div class="col-lg-2">
+                            <label for="" class="col-form-label heavyFont">Pages:</label>
+                            </div>
+                            <div class="col-lg-10">
+                                <select id="bookPagesSelect" class="form-select" aria-label="Default select example">
+                                        <option value="Littel" selected>Littel</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Many">Many</option>
+                                </select>
+                            </div>
+                    </div> <!--Book Pages dropdown label and select END-->
+
+                    <!--Book BASE dropdown label and select-->
+                    <div class="row g-3 align-items-center w-100 pt-3">
+                            <div class="col-lg-2">
+                            <label for="" class="col-form-label heavyFont">Base:</label>
+                            </div>
+                            <div class="col-lg-10">
+                                <select id="bookBaseSelect" class="form-select" aria-label="Default select example">
+                                        <option value="Science Fiction" selected>Science Fiction</option>
+                                        <option value="Dramatic">Dramtic</option>
+                                        <option value="Romantic">Romantic</option>
+                                        <option value="Horror">Horror</option>
+                                </select>
+                            </div>
+                    </div><!--Book BASE dropdown label and select END-->
+
+
+                    <!--Book EXTRAS dropdown label and select-->
+                    <div class="form-group-lg col-xs-5 pt-3">
+                            <label class="control-label pb-2 heavyFont" for="facilities">Extras:</label>
+                            <div class="form-group-lg">
+                            <div th:each="facility : ${facilities}" class="column_2">
+                                <span>
+                                    <input type="checkbox" name="extraOption" value="A Tale of Two Cities"/>
+                                    <label class="checkbox-inline" >A Tale of Two Cities</label>
+                                </span>
+                                
+                                <span>
+                                    <input type="checkbox" name="extraOption" value="The White Nights"/>
+                                    <label class="checkbox-inline">The White Nights</label>
+                                </span>
+                                
+                                <span>
+                                    <input type="checkbox" name="extraOption" value="The Purple Cow"/>
+                                    <label class="checkbox-inline">The Purple Cow</label>
+                                </span>
+                                
+                                <span>
+                                    <input type="checkbox" name="extraOption" value="The Death of a Sealsman"/>
+                                    <label class="checkbox-inline" >The Death of a Sealsman</label>
+                                </span>
+                                
+                                <span>
+                                    <input type="checkbox" name="extraOption" value="Alchemist"/>
+                                    <label class="checkbox-inline" >Alchemist</label>
+                                </span>
+                                
+                                <span>
+                                    <input type="checkbox" name="extraOption" value="Animal Farm"/>
+                                    <label class="checkbox-inline">Animal Farm</label>
+                                </span>
+                                
+                            </div>
+                            </div>
+                        </div> <!--Book EXTRAS dropdown label and select END-->
+                
+
+                    <button id="orderSubmitBtn" type="button" class="btn mt-4 " style="background-color:blueviolet; color:white;">Order!</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-1 "></div> <!--SPACER-->
+        <div class="col-lg-4 bookContent">
+            <div class="container py-3">
+                <h3 class="pt-2">Your Cart</h3>
+                <hr>
+
+                <div id="groupOfBooks" class="container">
+                    <h6 class="text-center py-5">Your Cart is empty!</h6>
+                    
+                </div>
+                <hr>
+                <div class="container mx-auto row pt-2">
+                        <div class="col-xl-6">
+                            <h6>Total:</h6>
+                        </div>
+                        <div class="col-xl-6">
+                            <h6 id="priceTotal">PRICE</h6>
+                        </div>
+                    
+                    
+                        <div class="input-group pt-3">
+                                <input id="couponTextInput" type="text" class="form-control" placeholder="Have a coupon?">
+                                <div class="input-group-append">
+                                <button class="btn" style="background-color: blueviolet; color:white;" type="button" id="couponBtn" >Add Coupon</button>
+                                </div>
+                        </div>
+                            
+
+
+                        <div class="container btn-group mx-auto pt-4">
+                                <button id="cancelOrderBtn" class="btn btn-danger mx-2">Cancel Order</button>
+                                <button id="checkOutOrderBtn" class="btn btn-warning mx-2" style="background-color: blueviolet; color:white;">Checkout</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/order.js"></script>
+  </body>
+</html>

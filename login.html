@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8" />
+    <title>Flat Login</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+ <!-- font awesome cdn link  -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ 
+ <!-- custom css file link  -->
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="css/login.css" />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="flat-form">
+        <ul class="tabs">
+          <li>
+            <a href="#login" class="active">Login</a>
+          </li>
+          <li>
+            <a href="#register">Register</a>
+          </li>
+          <li>
+            <a href="#reset">Reset Password</a>
+          </li>
+        </ul>
+        <div id="login" class="form-action show">
+          <h1>Login on website</h1>
+        
+          <!-- Client Validation -->
+          <form  method="post" action="index.html" target="self">
+            <ul>
+             
+              <li>
+                <input id="e-mail" name="mail" type="email" placeholder=" Your email" required/>
+              </li>
+              <li>
+               
+                <input type="password" id="pass" pattern=".{8,}"  placeholder="Password" required title="8 characters minimum"/>
+              </li>
+              <li>
+                <input type="checkbox" name="remember" id="remember" />
+                <label for="remember">Remember me for 14 days</label>
+              </li>
+              <br />
+              <li class="p-container">
+                <span>Forgot password ?</span><br><br>
+                <a href="#">click here</a>
+              </li>
+              <br />
+              <li>
+                <input type="submit"  value="Login" class="button" id="login_btn"/>
+              </li>
+            </ul>
+            <br /><br /><br />
+            <button type="button" class="fb-btn">
+              Join with <span>facebook</span>
+            </button>
+          </form>
+        </div>
+        <!--/#Register.form-action-->
+        <div  id="register" class="form-action hide">
+          <h1>Register</h1>
+          <p>
+            You should totally sign up for our super awesome service..
+          </p>
+          <form method="post"  action="index.html" target="blank">
+            <ul>
+              <li>
+                <input type="text" name="firstname" id="firstName" placeholder="First Name"><br>
+              </li>
+              <li>
+                <input type="text" name="lastname" id="lastName" placeholder="Last Name"><br>
+              </li>
+              <li>
+                <input id="e-mail" name="mail" type="email" placeholder=" Your email" required/>
+              </li>
+              <li>
+                <!-- <input type="password" placeholder="Password" required /> -->
+                <input type="password" id="pass" pattern=".{8,}"  placeholder="Password" required title="8 characters minimum"/>
+              </li>
+              <li>
+                <input type="submit" value="Sign Up" class="button" id="login_btn"/>
+              </li>
+              <p class="error-message"></p>
+
+            </ul>
+          </form>
+        </div>
+
+        <!--/#reset.form-action-->
+        <div id="reset" class="form-action hide">
+          <h1>Reset Password</h1>
+          <p>
+            To reset your password enter your email and your birthday and we'll
+            send you a link to reset your password.
+          </p>
+          <form method="post"  action="index.html" target="blank">
+            <ul>
+              <li>
+                <input type="text" placeholder="Email"required id="e-mail" />
+              </li>
+              <li>
+                <input type="text" placeholder="Birthday"required />
+              </li>
+              <li>
+                <input type="submit" value="Send" class="button" id="login_btn" />
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      (function ($) {
+        // constants
+        var SHOW_CLASS = "show",
+          HIDE_CLASS = "hide",
+          ACTIVE_CLASS = "active";
+
+        $(".tabs").on("click", "li a", function (e) {
+          e.preventDefault();
+          var $tab = $(this),
+            href = $tab.attr("href");
+
+          $(".active").removeClass(ACTIVE_CLASS);
+          $tab.addClass(ACTIVE_CLASS);
+
+          $(".show").removeClass(SHOW_CLASS).addClass(HIDE_CLASS).hide();
+
+          $(href)
+            .removeClass(HIDE_CLASS)
+            .addClass(SHOW_CLASS)
+            .hide()
+            .fadeIn(550);
+        });
+      })(jQuery);
+    </script>
+    <!-- <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script> -->
+
+    <script>
+      function validation(){
+	var input_text = document.querySelector("#Username");
+	var input_password = document.querySelector("#pass");
+	var error_msg = document.querySelector(".error_msg");
+
+	if(input_text.value.length <= 3 || input_password.value.length <= 3 ){
+		error_msg.style.display = "inline-block";
+		input_text.style.border = "1px solid #f74040";
+		input_password.style.border = "1px solid #f74040";
+		return false;
+	}
+	else{
+    alert("form submitted successfully")
+		return true;
+	}
+	
+}
+
+var input_fields = document.querySelectorAll(".input");
+var login_btn = document.querySelector("#login_btn");
+
+input_fields.forEach(function(input_item){
+	input_item.addEventListener("input", function(){
+		if(input_item.value.length > 3){
+			login_btn.disabled = false;
+			login_btn.className = "btn enabled"
+		}
+	})
+})
+
+function formValidation() {
+    var fname = document.getElementById('firstName').value;
+    var lname = document.getElementById('lastName').value;
+ 
+    var email = document.getElementById('e-mail').value;
+    var password = document.getElementById('password').value;
+    var text = "";
+  
+  if (FirstName(fname)) {
+  }
+  if (LastName(lname)) {
+  }
+
+  if (Email(email)) {
+  }
+  if (Password(password)) {
+  }
+  return false;
+}
+
+/*first name input validation*/
+function FirstName(fname) {
+  var message = document.getElementsByClassName("error-message");
+  var letters = /^[A-Za-z]+$/;
+  if ( fname =="" || fname.match(letters)) {
+    text="";
+    message[0].innerHTML = text;
+    return true;
+  }
+  
+  else {
+    text="First name should contain only letters";
+    message[0].innerHTML = text;
+    return false;
+  }
+}
+
+
+/*email address input validation*/
+function Email(email) {
+  var message = document.getElementsByClassName("error-message");
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+  var atpos = email.indexOf("@");
+  var dotpos = email.lastIndexOf(".");
+          
+  if ( email =="" || email.match(mailformat) || atpos > 1 && ( dotpos - atpos > 2 )) {
+    text="";
+    message[2].innerHTML = text;
+    return true;
+  }
+         
+  else {
+    text="Wrong email format";
+    message[2].innerHTML = text;
+    return false;
+  }
+}
+
+
+
+
+
+/*validate password*/
+function Password(password) {
+  var message = document.getElementsByClassName("error-message");
+  var illegalChars = /[\W_]/; // allow only letters and numbers
+  if (illegalChars.test(password)) { 
+    text="Password contains illegal characters";
+    message[5].innerHTML = text;
+    return false;
+  }
+  else if ( (password.search(/[0-9]+/)==-1) ) {
+    text="Password should contain at least one number";
+    message[5].innerHTML = text;
+    return false;
+  }
+  else {
+    text="";
+    message[5].innerHTML = text;
+    return true;
+  }
+}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+[
+    { "id": "1" ,
+    "Name": "Kafka on the shore", "Author": "Haruki Murakami","Price":"37$", "Image":{ "fields": { "file": { "url": "../image/Murakami.jpg"} } }, "Pages": 467, "Language":"English", "IsAvailable": true, "Category":"Mystery"},
+    {"id": "2" ,
+    "Name": "Harry Potter and the Sorcerer's Stone", "Author": "J. K. Rowling","Price":"15$", "Image":{ "fields": { "file": { "url": "https://i.pinimg.com/originals/17/4b/27/174b27b63c1999b89891d7014c03f4c8.jpg" } } }, "Pages": 309, "Language":"English", "IsAvailable": true, "Category": "Mystery"},
+    {"id": "3" ,
+    "Name": "The War and The Peace", "Author": "Lev Nikolaevič Tolstoy","Price":"40$", "Image":{ "fields": { "file": { "url": "../image/War&Peace.jpg" } } }, "Pages":1225, "Language":"English", "IsAvailable": true, "Category": "Classics"},
+    
+    {"id": "4" ,
+    "Name": "The Mirror Crack'd", "Author": "Agatha Christie","Price":"26$", "Image":{ "fields": { "file": { "url": "../image/Mirror-Agatha.jpg" } } }, "Pages": 312 , "Language":"English", "IsAvailable": true, "Category":"Mystery"},
+    { "id": "5" ,
+    "Name": "Macbeth", "Author": "William Shakespeare","Price":"32$", "Image":{ "fields": { "file": { "url": "https://www.monaghanbooks.com/wp-content/uploads/2019/05/Macbeth-Ment.jpg" } } }, "Pages": 168, "Language":"English", "IsAvailable": true, "Category": "Classics"},
+    {"id": "6" ,
+     "Name": "Oedipus", "Author": "Sophocles","Price":"30$", "Image":{ "fields": { "file": { "url": "https://d28hgpri8am2if.cloudfront.net/book_images/cvr9781416500339_9781416500339_hr.jpg" } } }, "Pages": 186, "Language":" Greek", "IsAvailable": false, "Category": "Classics"},
+   
+    {"id": "7" ,
+    "Name": "The Forty Rules of Love", "Author": "Elif Shafak","Price":"29$", "Image":{ "fields": { "file": { "url": "../image/ElifShafak.jpg" } } }, "Pages": 186, "Language":"English", "IsAvailable": false, "Category": "Classics"},
+    {"id": "8" ,
+     "Name": "Dr.Faustus", "Author": "Christopher Marlowe","Price":"34$", "Image":{ "fields": { "file": { "url": "https://cdn.penguin.com.au/covers/original/9780451531612.jpg" } } }, "Pages": 179, "Language":"English", "IsAvailable": true, "Category": "Mystery"},
+    { "id": "9" ,
+    "Name": "The ABC murders", "Author": "Agatha Christie","Price":"22$","Image":{ "fields": { "file": { "url": "http://lh5.ggpht.com/-Lgp5uZYkhok/TpQipBqI5pI/AAAAAAAAR8s/7WLHL5QeoC4/The%252520ABC%252520murders_thumb%25255B1%25255D.jpg?imgmax=800" } } }, "Pages": 270 , "Language":"English", "IsAvailable": true, "Category": "Mystery"},
+
+    {"id": "10" ,
+    "Name": "Pride and Prejudice", "Author": "Jane Austen","Price":"23$", "Image":{ "fields": { "file": { "url": "http://cdn2.bigcommerce.com/n-biq04i/5uqrjcd/products/34568/images/50941/se0897__59280.1397769304.1280.1280.jpg?c=2" } } }, "Pages": 273, "Language":"English", "IsAvailable": true, "Category": "Classics"},
+    {"id": "11" ,
+    "Name": "Capturing Freedom's Cry", "Author": "Ghadah Al-Samman","Price":"31$", "Image":{ "fields": { "file": { "url": "../image/GhadaSamman.jpg" } } }, "Pages": 176 , "Language":"Arabic", "IsAvailable": true, "Category": "Classics"},
+    {"id": "12" ,
+     "Name": "Letters to Milena", "Author": " Franz Kafka","Price":"37$", "Image":{ "fields": { "file": { "url": "https://1.bp.blogspot.com/-A44tJgvA5oU/XzUdX2afxsI/AAAAAAAAAPE/s3WVlJcdtZcL0iWpLGOjp8sjT14CR7DlgCLcBGAsYHQ/w680/PicsArt_08-13-03.10.40.jpg" } } }, "Pages": 298, "Language":"German", "IsAvailable": false, "Category": "Classics"}
+
+]
